@@ -1,0 +1,30 @@
+﻿@model Lift?
+
+@{
+    ViewData["Title"] = "Create lift";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Create a new lift</h1>
+</div>
+
+<div class="myform">
+    <form asp-action="CreateLift" method="post">
+        <input asp-for="Id" type="hidden" value="0" />
+        <input asp-for="WorkoutId" type="hidden" />
+        <div  class="myforma">
+            <label asp-for="Name" class="" >
+                <h4>Name</h4>
+            </label>
+            <br />
+            <input asp-for="Name" placeholder="Name..." />
+        </div>
+        <br />
+
+        <div>
+            <p></p>
+            <button type="submit">Submit form</button>
+            <p></p>
+        </div>
+    </form>
+</div>

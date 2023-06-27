@@ -1,0 +1,47 @@
+﻿@model Workout?
+
+@{
+    ViewData["Title"] = "Details Page";
+    int id = ViewBag.id;
+}
+
+@if (Model != null)
+{
+    <div class="text-center">
+        <h1 class="display-4">Workout: @Model.WorkoutTitle</h1>
+    </div>
+
+    <h6>Date: @Model.Date</h6>
+    <h6>Time in gym: @Model.TimeInGym minutes</h6>
+    <br />
+
+    <p>
+        <a asp-action="CreateLift" asp-route-id="@Model.Id">Create new lift</a>
+    </p>
+    <br />
+
+    <div>
+        @foreach (var item in Model.Lifts)
+        {
+            <h2>@item.Name</h2>
+            <p>
+                <a asp-action="CreateSet" asp-route-id="@item.Id">Create new set</a>
+            </p>
+            <br />
+            @foreach (var items in item.Sets)
+            {
+                <h4>set: @items.SetNumber</h4>
+                <h6>reps: @items.Reps
+                Weight: @items.Weight</h6>
+            }
+            <br />
+        }
+    </div>
+}
+
+else
+{
+    <div class="text-center">
+        <h3>Workout not found!</h3>
+    </div>
+}

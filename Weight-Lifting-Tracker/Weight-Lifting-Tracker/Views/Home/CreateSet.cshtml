@@ -1,0 +1,47 @@
+﻿@model Set?
+
+@{
+    ViewData["Title"] = "Create set";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Create a new set</h1>
+</div>
+
+
+<div class="myform">
+    <form asp-action="CreateSet" method="post">
+        <input asp-for="Id" type="hidden" value="0"/>
+        <input asp-for="LiftId" type="hidden" />
+        <div  class="myforma">
+            <label asp-for="SetNumber" class="" >
+                <h4>Set number</h4>
+            </label>
+            <br />
+            <input asp-for="SetNumber" placeholder="SetNumber..." />
+        </div>
+        <br />
+        <div  class="myforma">
+            <label asp-for="Reps" class="" >
+                <h4>Reps</h4>
+            </label>
+            <br />
+            <input asp-for="Reps" placeholder="Reps..." />
+        </div>
+        <br />
+        <div  class="myforma">
+            <label asp-for="Weight" class="" >
+                <h4>Weight</h4>
+            </label>
+            <br />
+            <input asp-for="Weight" placeholder="Weight..." />
+        </div>
+        <br />
+
+        <div>
+            <p></p>
+            <button type="submit">Submit form</button>
+            <p></p>
+        </div>
+    </form>
+</div>

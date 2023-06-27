@@ -1,0 +1,45 @@
+﻿@model Workout?
+
+@{
+    ViewData["Title"] = "Create workout";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Create a new workout</h1>
+</div>
+
+
+<div class="myform">
+    <form asp-action="CreateWorkout" method="post">
+        <div  class="myforma">
+            <label asp-for="WorkoutTitle" class="" >
+                <h4>Title</h4>
+            </label>
+            <br />
+            <input asp-for="WorkoutTitle" placeholder="title..." />
+        </div>
+        <br />
+        <div class="myforma">
+            <label asp-for="TimeInGym">
+                <h4>TimeInGym</h4>
+            </label>
+            <br />
+            <input asp-for="TimeInGym" placeholder="TimeInGym..."/>
+        </div>
+        <br />
+        <div class="myforma">
+            <label asp-for="Date">
+                <h4>Date</h4>
+            </label>
+            <br />
+            <input asp-for="Date" />
+        </div>
+        <br />
+
+        <div>
+            <p></p>
+            <button type="submit">Submit form</button>
+            <p></p>
+        </div>
+    </form>
+</div>

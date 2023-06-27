@@ -15,12 +15,28 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Development\Technoberg\Weight-Lifting-Tracker\Weight-Lifting-Tracker\Weight-Lifting-Tracker\Weight-Lifting-Tracker
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Development/Technoberg/Weight-Lifting-Tracker/Weight-Lifting-Tracker/Weight-Lifting-Tracker/Weight-Lifting-Tracker/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+[C:/Development/Technoberg/Weight-Lifting-Tracker/Weight-Lifting-Tracker/Weight-Lifting-Tracker/Weight-Lifting-Tracker/Views/Home/CreateLift.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDcmVhdGVMaWZ0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Development/Technoberg/Weight-Lifting-Tracker/Weight-Lifting-Tracker/Weight-Lifting-Tracker/Weight-Lifting-Tracker/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+[C:/Development/Technoberg/Weight-Lifting-Tracker/Weight-Lifting-Tracker/Weight-Lifting-Tracker/Weight-Lifting-Tracker/Views/Home/CreateSet.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDcmVhdGVTZXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Development/Technoberg/Weight-Lifting-Tracker/Weight-Lifting-Tracker/Weight-Lifting-Tracker/Weight-Lifting-Tracker/Views/Home/CreateWorkout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDcmVhdGVXb3Jrb3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Development/Technoberg/Weight-Lifting-Tracker/Weight-Lifting-Tracker/Weight-Lifting-Tracker/Weight-Lifting-Tracker/Views/Home/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Development/Technoberg/Weight-Lifting-Tracker/Weight-Lifting-Tracker/Weight-Lifting-Tracker/Weight-Lifting-Tracker/Views/Home/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Development/Technoberg/Weight-Lifting-Tracker/Weight-Lifting-Tracker/Weight-Lifting-Tracker/Weight-Lifting-Tracker/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Development/Technoberg/Weight-Lifting-Tracker/Weight-Lifting-Tracker/Weight-Lifting-Tracker/Weight-Lifting-Tracker/Views/Shared/Error.cshtml]

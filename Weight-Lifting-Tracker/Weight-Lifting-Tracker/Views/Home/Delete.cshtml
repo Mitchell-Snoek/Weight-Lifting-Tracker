@@ -1,0 +1,13 @@
+﻿@model Weight_Lifting_Tracker.Models.Workout
+
+@{
+    ViewData["Title"] = "Delete Page";
+    ViewBag.Title = "Delete";
+    var ID = ViewBag.ID;
+}
+
+<div style="text-align:center;">
+    <h4>are you sure you want to delete your workout</h4>
+    <a asp-action="Deleteing" asp-route-id="@ID"><h4>Delete</h4></a>
+    <a asp-action="Index"><h4>Cancel</h4></a>
+</div>
