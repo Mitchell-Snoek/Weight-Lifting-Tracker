@@ -1,4 +1,3 @@
-
 namespace Weight_Lifting_Tracker.Models
 {
     public class Workout

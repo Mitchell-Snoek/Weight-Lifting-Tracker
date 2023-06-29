@@ -15,10 +15,10 @@ namespace Weight_Lifting_Tracker.Data
                 return;   // DB has been seeded
             }
 
-            var model = new Workout[]
+            var workouts = new Workout[]
             {
                 new Workout{
-                    WorkoutTitle="testing",
+                    WorkoutTitle="Upper Body",
                     TimeInGym=75,
                     Date=DateTime.Parse("2105-03-07 14:20 PM"),
                     Lifts = new List<Lift>
@@ -42,7 +42,7 @@ namespace Weight_Lifting_Tracker.Data
                     }
                 },
                 new Workout{
-                    WorkoutTitle="test634",
+                    WorkoutTitle="Legs",
                     TimeInGym=75,
                     Date=DateTime.Parse("2052-05-05 17:54 PM"),
                     Lifts = new List<Lift>
@@ -66,7 +66,7 @@ namespace Weight_Lifting_Tracker.Data
                     }}
             };
 
-            foreach (var item in model)
+            foreach (var item in workouts)
             {
                 context.Workouts.Add(item);
             }
