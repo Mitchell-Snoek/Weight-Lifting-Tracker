@@ -1,0 +1,29 @@
+﻿@model Lift?
+
+@{
+    ViewData["Title"] = "Edit lift";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Edit lift: @Model.Name</h1>
+</div>
+
+
+<div class="myform">
+    <form asp-action="EditLift" method="post">
+        <div  class="myforma">
+            <label asp-for="Name" class="" >
+                <h4>Title</h4>
+            </label>
+            <br />
+            <input asp-for="Name" placeholder="title..." />
+        </div>
+        <br />
+
+        <div>
+            <p></p>
+            <button type="submit">Submit form</button>
+            <p></p>
+        </div>
+    </form>
+</div>

@@ -27,12 +27,32 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDcmVhdGVXb3Jrb3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Development/Technoberg/Weight-Lifting-Tracker/Weight-Lifting-Tracker/Weight-Lifting-Tracker/Weight-Lifting-Tracker/Views/Home/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZWxldGUuY3NodG1s
+[C:/Development/Technoberg/Weight-Lifting-Tracker/Weight-Lifting-Tracker/Weight-Lifting-Tracker/Weight-Lifting-Tracker/Views/Home/DeleteLift.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZWxldGVMaWZ0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Development/Technoberg/Weight-Lifting-Tracker/Weight-Lifting-Tracker/Weight-Lifting-Tracker/Weight-Lifting-Tracker/Views/Home/DeleteSet.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZWxldGVTZXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Development/Technoberg/Weight-Lifting-Tracker/Weight-Lifting-Tracker/Weight-Lifting-Tracker/Weight-Lifting-Tracker/Views/Home/DeleteWorkout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZWxldGVXb3Jrb3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Development/Technoberg/Weight-Lifting-Tracker/Weight-Lifting-Tracker/Weight-Lifting-Tracker/Weight-Lifting-Tracker/Views/Home/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Development/Technoberg/Weight-Lifting-Tracker/Weight-Lifting-Tracker/Weight-Lifting-Tracker/Weight-Lifting-Tracker/Views/Home/EditLift.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFZGl0TGlmdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Development/Technoberg/Weight-Lifting-Tracker/Weight-Lifting-Tracker/Weight-Lifting-Tracker/Weight-Lifting-Tracker/Views/Home/EditSet.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFZGl0U2V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Development/Technoberg/Weight-Lifting-Tracker/Weight-Lifting-Tracker/Weight-Lifting-Tracker/Weight-Lifting-Tracker/Views/Home/EditWorkout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFZGl0V29ya291dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Development/Technoberg/Weight-Lifting-Tracker/Weight-Lifting-Tracker/Weight-Lifting-Tracker/Weight-Lifting-Tracker/Views/Home/Index.cshtml]

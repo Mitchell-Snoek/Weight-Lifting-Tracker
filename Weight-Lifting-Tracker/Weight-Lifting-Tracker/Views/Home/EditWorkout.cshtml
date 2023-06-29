@@ -1,16 +1,16 @@
 ﻿@model Workout?
 
 @{
-    ViewData["Title"] = "Create workout";
+    ViewData["Title"] = "Edit workout";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Create a new workout</h1>
+    <h1 class="display-4">Edit workout: @Model.WorkoutTitle</h1>
 </div>
 
 
 <div class="myform">
-    <form asp-action="CreateWorkout" method="post">
+    <form asp-action="EditWorkout" method="post">
         <div  class="myforma">
             <label asp-for="WorkoutTitle" class="" >
                 <h4>Title</h4>
@@ -21,10 +21,10 @@
         <br />
         <div class="myforma">
             <label asp-for="TimeInGym">
-                <h4>Minutes in gym</h4>
+                <h4>TimeInGym</h4>
             </label>
             <br />
-            <input asp-for="TimeInGym" placeholder="Minutes in gym..."/>
+            <input asp-for="TimeInGym" placeholder="TimeInGym..."/>
         </div>
         <br />
         <div class="myforma">

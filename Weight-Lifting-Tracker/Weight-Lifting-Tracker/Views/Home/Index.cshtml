@@ -52,7 +52,8 @@
                 @Html.DisplayFor(modelItem => item.TimeInGym)
             </td>
             <td>
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="EditWorkout" asp-route-id="@item.Id">Edit</a> ||
+                <a asp-action="DeleteWorkout" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
 }

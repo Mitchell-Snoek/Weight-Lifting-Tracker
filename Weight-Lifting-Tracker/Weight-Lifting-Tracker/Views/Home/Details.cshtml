@@ -8,11 +8,16 @@
 @if (Model != null)
 {
     <div class="text-center">
-        <h1 class="display-4">Workout: @Model.WorkoutTitle</h1>
+        <h1 class="display-4">@Model.WorkoutTitle</h1>
     </div>
 
-    <h6>Date: @Model.Date</h6>
-    <h6>Time in gym: @Model.TimeInGym minutes</h6>
+    <div class="card" style="width: 19rem;">
+        <div class="card-body">
+            <h5 class="card-title">Workout: @Model.WorkoutTitle</h5>
+            <h6 class="card-text">Date: @Model.Date</h6>
+            <h6 class="card-text">Time in gym: @Model.TimeInGym minutes</h6>
+        </div>
+    </div>
     <br />
 
     <p>
@@ -20,20 +25,32 @@
     </p>
     <br />
 
-    <div>
+    <div style="flex-direction:row;">
         @foreach (var item in Model.Lifts)
         {
-            <h2>@item.Name</h2>
-            <p>
-                <a asp-action="CreateSet" asp-route-id="@item.Id">Create new set</a>
-            </p>
-            <br />
+            <div class="card" style="width: 19rem;">
+                <div class="card">
+                    <div class="card-body">
+                        <h2>@item.Name</h2>
+                        <p>
+                            <a asp-action="CreateSet" asp-route-id="@item.Id">Create new set</a> ||
+                            <a asp-action="EditLift" asp-route-id="@item.Id">Edit lift</a> ||
+                            <a asp-action="DeleteLift" asp-route-id="@item.Id">Delete lift</a>
+                        </p>
+                    </div>
+                </div>
+
             @foreach (var items in item.Sets)
             {
-                <h4>set: @items.SetNumber</h4>
-                <h6>reps: @items.Reps
-                Weight: @items.Weight</h6>
+                <div class="card-body">
+                    <h4>set: @items.SetNumber</h4>
+                    <h6>reps: @items.Reps
+                    Weight: @items.Weight</h6>
+                    <a asp-action="EditSet" asp-route-id="@items.Id">Edit set</a> ||
+                    <a asp-action="DeleteSet" asp-route-id="@items.Id">Delete set</a>
+                </div>
             }
+            </div>
             <br />
         }
     </div>

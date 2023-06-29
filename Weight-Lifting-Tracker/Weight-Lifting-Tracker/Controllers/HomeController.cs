@@ -17,6 +17,7 @@ namespace Weight_Lifting_Tracker.Controllers
             _logger = logger;
         }
 
+        //Begin home page
         public async Task<IActionResult> Index(string sortOrder, string searchString)
         {
             ViewData["TitleSortParm"] = String.IsNullOrEmpty(sortOrder) ? "Title_desc" : "";
@@ -52,7 +53,11 @@ namespace Weight_Lifting_Tracker.Controllers
             }
             return View(await workouts.AsNoTracking().ToListAsync());
         }
+        //End home page
 
+
+        //Begin creates
+        //Begin create workouts
         public IActionResult CreateWorkout()
         {
             var workout = _context.Workouts
@@ -85,7 +90,9 @@ namespace Weight_Lifting_Tracker.Controllers
             }
             return RedirectToAction(nameof(Index));
         }
+        //End create workout
 
+        //Begin create lift
         public IActionResult CreateLift(int id)
         {
             var lift = new Lift();
@@ -115,7 +122,9 @@ namespace Weight_Lifting_Tracker.Controllers
             }
             return RedirectToAction(nameof(Index));
         }
+        //End create lift
 
+        //Begin create set
         public IActionResult CreateSet(int id)
         {
             var set = new Set();
@@ -145,7 +154,134 @@ namespace Weight_Lifting_Tracker.Controllers
             }
             return RedirectToAction(nameof(Index));
         }
+        //End create set
+        //End creates
 
+
+        //Begin Edits
+        //Begin Edit workout
+        public IActionResult EditWorkout(int id)
+        {
+            var workout = _context.Workouts
+                .Include(x => x.Lifts)
+                    .ThenInclude(l => l.Sets)
+                        .FirstOrDefault(x => x.Id == id);
+
+            return View(workout);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditWorkout(Workout workout, int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var workoutToUpdate = await _context.Workouts.FirstOrDefaultAsync(s => s.Id == id);
+            if (await TryUpdateModelAsync<Workout>(workoutToUpdate,
+                "",
+                s => s.WorkoutTitle, s => s.Date, s => s.TimeInGym))
+            {
+                try
+                {
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
+                }
+                catch (DbUpdateException /* ex */)
+                {
+                    //Log the error (uncomment ex variable name and write a log.)
+                    ModelState.AddModelError("", "Unable to save changes. " +
+                        "Try again, and if the problem persists, " +
+                        "see your system administrator.");
+                }
+            }
+            return RedirectToAction(nameof(Index));
+        }
+        //End Edit workout
+
+        //Begin Edit lift
+        public IActionResult EditLift(int id)
+        {
+            var workout = _context.Lifts
+                .Include(x => x.Sets)
+                    .FirstOrDefault(x => x.Id == id);
+
+            return View(workout);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditLift(Lift Lifts, int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var liftToUpdate = await _context.Lifts.FirstOrDefaultAsync(s => s.Id == id);
+            if (await TryUpdateModelAsync<Lift>(liftToUpdate,
+                "",
+                s => s.Name))
+            {
+                try
+                {
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
+                }
+                catch (DbUpdateException /* ex */)
+                {
+                    //Log the error (uncomment ex variable name and write a log.)
+                    ModelState.AddModelError("", "Unable to save changes. " +
+                        "Try again, and if the problem persists, " +
+                        "see your system administrator.");
+                }
+            }
+            return RedirectToAction(nameof(Index));
+        }
+        //End Edit lift
+
+        //Begin Edit set
+        public IActionResult EditSet(int id)
+        {
+            var workout = _context.Sets
+                .FirstOrDefault(x => x.Id == id);
+
+            return View(workout);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditSet(Set Sets, int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var setToUpdate = await _context.Sets.FirstOrDefaultAsync(s => s.Id == id);
+            if (await TryUpdateModelAsync<Set>(setToUpdate,
+                "",
+                s => s.SetNumber, s => s.Reps, s => s.Weight))
+            {
+                try
+                {
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
+                }
+                catch (DbUpdateException /* ex */)
+                {
+                    //Log the error (uncomment ex variable name and write a log.)
+                    ModelState.AddModelError("", "Unable to save changes. " +
+                        "Try again, and if the problem persists, " +
+                        "see your system administrator.");
+                }
+            }
+            return RedirectToAction(nameof(Index));
+        }
+        //End Edit set
+        //End Edits
+
+
+        //Begin details
         public IActionResult Details(int id)
         {
             // LINQ
@@ -158,14 +294,18 @@ namespace Weight_Lifting_Tracker.Controllers
 
             return View(workout);
         }
+        //End details
 
-        public IActionResult Delete(int id)
+
+        //Begin deletes
+        //Begin delete workout
+        public IActionResult DeleteWorkout(int id)
         {
             ViewBag.ID = id;
             return View();
         }
 
-        public async Task<IActionResult> Deleteing(Workout Workouts, int id)
+        public async Task<IActionResult> DeleteingWorkout(Workout Workouts, int id)
         {
             var workoutdelete = await _context.Workouts.FindAsync(id);
             if (workoutdelete == null)
@@ -185,7 +325,69 @@ namespace Weight_Lifting_Tracker.Controllers
                 return RedirectToAction(nameof(Index), new { id = id, saveChangesError = true });
             }
         }
+        //End delete workout
 
+        //Begin delete lift
+        public IActionResult DeleteLift(int id)
+        {
+            ViewBag.ID = id;
+            return View();
+        }
+
+        public async Task<IActionResult> DeleteingLift(Lift Lifts, int id)
+        {
+            var liftdelete = await _context.Lifts.FindAsync(id);
+            if (liftdelete == null)
+            {
+                return RedirectToAction(nameof(Index));
+            }
+
+            try
+            {
+                _context.Lifts.Remove(liftdelete);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            catch (DbUpdateException /* ex */)
+            {
+                //Log the error (uncomment ex variable name and write a log.)
+                return RedirectToAction(nameof(Index), new { id = id, saveChangesError = true });
+            }
+        }
+        //End delete lift
+
+        //Begin delete set
+        public IActionResult DeleteSet(int id)
+        {
+            ViewBag.ID = id;
+            return View();
+        }
+
+        public async Task<IActionResult> DeleteingSet(Set sets, int id)
+        {
+            var setdelete = await _context.Sets.FindAsync(id);
+            if (setdelete == null)
+            {
+                return RedirectToAction(nameof(Index));
+            }
+
+            try
+            {
+                _context.Sets.Remove(setdelete);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            catch (DbUpdateException /* ex */)
+            {
+                //Log the error (uncomment ex variable name and write a log.)
+                return RedirectToAction(nameof(Index), new { id = id, saveChangesError = true });
+            }
+        }
+        //End delete set
+        //End deletes
+
+
+        //Error
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
